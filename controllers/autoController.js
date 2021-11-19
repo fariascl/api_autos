@@ -6,7 +6,7 @@ function guardar(req, res){
         auto.patente = req.body.patente
         auto.anio = req.body.anio
 
-        marca.save((err, autostore) => {
+        auto.save((err, autostore) => {
             if (err){
                 return res.status(400).send({msg: `Error al intentar guardar en la base de datos > ${err}`})
             }
@@ -19,7 +19,7 @@ function guardar(req, res){
 }
 
 function listar(req, res){
-    Marca.find({}, (err, autos) => {
+    Auto.find({}, (err, autos) => {
         if (err){
             return res.status(500).send({msg: 'error al realizar la peticion'})
         }
@@ -28,28 +28,28 @@ function listar(req, res){
 }
 
 function recuperar(req, res){
-    let idmarca = req.params.id
-    Marca.findById(idmarca, (err, auto) => {
+    let idauto = req.params.id
+    Auto.findById(idauto, (err, auto) => {
         if (err){
             return res.status(500).send({msg: 'error al realizar peticion'})
         }
-        if (!marca){
-            return res.status(400).send({msg: 'error, la marca no existe'})
+        if (!auto){
+            return res.status(400).send({msg: 'error, el auto no existe'})
         }
         res.status(200).send({auto})
     })
 }
 
 function eliminar(req, res){
-    let idmarca = req.params.id
-    Marca.findByIdAndDelete(idmarca, (err, auto) => {
+    let idauto = req.params.id
+    Auto.findByIdAndDelete(idauto, (err, auto) => {
         if (err){
             return res.status(500).send({msg: 'error al eliminar el libro'})
         }
         if (!auto){
             return res.status(400).send({msg: 'error, el libro no existe'})
         }
-        res.status(200).send({marca})
+        res.status(200).send({auto})
     })
 }
 
