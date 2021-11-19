@@ -16,8 +16,8 @@ const mongoose = require('mongoose')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.use('/api_autos', auto_route)
-app.use('/api_marcas', marca_route)
+app.use('/api', auto_route)
+app.use('/api', marca_route)
 
 const options = {
     useNewUrlParser: true,

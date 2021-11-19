@@ -1,4 +1,4 @@
-var Marca = require('../models/auto.js');
+var Auto = require('../models/auto.js');
 
 function guardar(req, res){
     try {

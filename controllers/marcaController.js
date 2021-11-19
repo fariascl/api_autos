@@ -3,7 +3,6 @@ var Marca = require('../models/marca.js');
 function guardar(req, res){
     try {
         let marca = new Marca()
-        marca.id = req.body.nombre
         marca.nombre = req.body.nombre
 
         marca.save((err, marcastore) => {
