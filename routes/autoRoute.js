@@ -8,8 +8,8 @@ var autoController = require('../controllers/autoController');
 
 var api = express.Router();
 
-api.post('/libros', autoController.guardar);
-api.get('/libros', autoController.listar);
-api.get('/libro/:id', autoController.recuperar);
-api.delete('/libro/:id', autoController.eliminar);
+api.post('/autos', autoController.guardar);
+api.get('/autos', autoController.listar);
+api.get('/auto/:id', autoController.recuperar);
+api.delete('/auto/:id', autoController.eliminar);
 module.exports = api;

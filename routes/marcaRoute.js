@@ -8,8 +8,8 @@ var marcaController = require('../controllers/marcaController');
 
 var api = express.Router();
 
-api.post('/libros', marcaController.guardar);
-api.get('/libros', marcaController.listar);
-api.get('/libro/:id', marcaController.recuperar);
-api.delete('/libro/:id', marcaController.eliminar);
+api.post('/marcas', marcaController.guardar);
+api.get('/marcas', marcaController.listar);
+api.get('/marca/:id', marcaController.recuperar);
+api.delete('/marca/:id', marcaController.eliminar);
 module.exports = api;
