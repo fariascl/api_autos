@@ -25,6 +25,11 @@ const AutoSchema = Schema(
         {
             type: Number,
             required: true
+        },
+        marca:
+        {
+            type: String,
+            required: true
         }
 
     })

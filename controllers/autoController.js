@@ -5,6 +5,7 @@ function guardar(req, res){
         let auto = new Auto()
         auto.patente = req.body.patente
         auto.anio = req.body.anio
+        auto.marca = req.body.marca
 
         auto.save((err, autostore) => {
             if (err){
